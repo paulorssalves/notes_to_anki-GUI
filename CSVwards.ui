@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>345</width>
+    <height>534</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="fullFileName"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="selectFileButton">
+            <property name="text">
+             <string>Abrir</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="convertButton">
+        <property name="text">
+         <string>Converter</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>345</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAjuda">
+    <property name="title">
+     <string>Ajuda</string>
+    </property>
+    <addaction name="infoButton"/>
+    <addaction name="openTutorialPage"/>
+    <addaction name="openSourceCodePage"/>
+   </widget>
+   <addaction name="menuAjuda"/>
+  </widget>
+  <action name="openTutorialPage">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+   <property name="toolTip">
+    <string>Abre a página de tutorial no GitHub</string>
+   </property>
+   <property name="statusTip">
+    <string>Abre a página de tutorial no GitHub</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+  </action>
+  <action name="openSourceCodePage">
+   <property name="text">
+    <string>Código-fonte</string>
+   </property>
+   <property name="toolTip">
+    <string>Abre a página de código-fonte no GitHub</string>
+   </property>
+   <property name="statusTip">
+    <string>Abre a página de código-fonte no GitHub</string>
+   </property>
+  </action>
+  <action name="infoButton">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>selectFileButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>browseSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>convertButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>convertSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>484</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fullFileName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>returnPressedSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>browseSlot()</slot>
+  <slot>convertSlot()</slot>
+  <slot>returnPressedSlot()</slot>
+ </slots>
+</ui>
