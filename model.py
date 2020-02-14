@@ -1,5 +1,4 @@
 from convert import convert as f_convert
-import os
 
 class Model:
     def __init__(self):
