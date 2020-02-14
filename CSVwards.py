@@ -33,6 +33,7 @@ class Ui_mainWindow(QObject):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setObjectName("textEdit")
+        self.textEdit.setReadOnly(True)
         self.verticalLayout.addWidget(self.textEdit)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.convertButton = QtWidgets.QPushButton(self.centralwidget)
@@ -69,7 +70,7 @@ class Ui_mainWindow(QObject):
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
+        mainWindow.setWindowTitle(_translate("mainWindow", "Notes To Anki"))
         self.selectFileButton.setText(_translate("mainWindow", "Abrir"))
         self.convertButton.setText(_translate("mainWindow", "Converter"))
         self.menuAjuda.setTitle(_translate("mainWindow", "Ajuda"))

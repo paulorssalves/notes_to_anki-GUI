@@ -1,3 +1,5 @@
+from convert import convert as f_convert
+import os
 
 class Model:
     def __init__(self):
@@ -26,9 +28,7 @@ class Model:
     def getFileContents(self):
         return self.fileContents
 
+    # this is where the magic happens
     def convert (self, text):
         if self.isValid(self.fileName):
-            fileName = self.fileName + ".csv"
-            file = open(fileName, 'w')
-            file.write(text)
-            file.close()
+            f_convert(self.fileName)
