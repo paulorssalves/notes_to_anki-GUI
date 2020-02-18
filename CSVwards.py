@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSlot, QObject
+import webbrowser
 
 
 class Ui_mainWindow(QObject):
@@ -53,13 +54,12 @@ class Ui_mainWindow(QObject):
         self.openTutorialPage = QtWidgets.QAction(mainWindow)
         self.openTutorialPage.setWhatsThis("")
         self.openTutorialPage.setObjectName("openTutorialPage")
-        self.openSourceCodePage = QtWidgets.QAction(mainWindow)
-        self.openSourceCodePage.setObjectName("openSourceCodePage")
+        self.openTutorialPage.triggered.connect(self.OpenTutorial)
+
         self.infoButton = QtWidgets.QAction(mainWindow)
         self.infoButton.setObjectName("infoButton")
         self.menuAjuda.addAction(self.infoButton)
         self.menuAjuda.addAction(self.openTutorialPage)
-        self.menuAjuda.addAction(self.openSourceCodePage)
         self.menubar.addAction(self.menuAjuda.menuAction())
 
         self.retranslateUi(mainWindow)
@@ -77,12 +77,13 @@ class Ui_mainWindow(QObject):
         self.openTutorialPage.setText(_translate("mainWindow", "Tutorial"))
         self.openTutorialPage.setToolTip(_translate("mainWindow", "Abre a página de tutorial no GitHub"))
         self.openTutorialPage.setStatusTip(_translate("mainWindow", "Abre a página de tutorial no GitHub"))
-        self.openSourceCodePage.setText(_translate("mainWindow", "Código-fonte"))
-        self.openSourceCodePage.setToolTip(_translate("mainWindow", "Abre a página de código-fonte no GitHub"))
-        self.openSourceCodePage.setStatusTip(_translate("mainWindow", "Abre a página de código-fonte no GitHub"))
         self.infoButton.setText(_translate("mainWindow", "Info"))
         self.infoButton.setStatusTip(_translate("mainWindow", "Explica o propósito do programa"))
 
+    @pyqtSlot()
+    def OpenTutorial(self):
+         webbrowser.open('https://github.com/tr4zodone/notes_to_anki-GUI')
+    
     @pyqtSlot()
     def returnPressedSlot(self):
         pass
