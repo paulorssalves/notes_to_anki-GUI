@@ -8,11 +8,17 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSlot, QObject
+from PyQt5.QtWidgets import QMessageBox
 import webbrowser
-
 
 class Ui_mainWindow(QObject):
     def setupUi(self, mainWindow):
+
+        self.infoMessage = QMessageBox()
+        self.infoMessage.setIcon(QMessageBox.Information)
+        self.infoMessage.setWindowTitle("Informação")
+        self.infoMessage.setText("Notes To Anki foi feito para transformar arquivos de texto especificamente formatados em arquivos para uso no Anki. Mais informações no <a href='https://github.com/tr4zodone/notes_to_anki-GUI/blob/master/README.md'>Tutorial</a>.")
+
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(345, 534)
         self.centralwidget = QtWidgets.QWidget(mainWindow)
@@ -58,6 +64,8 @@ class Ui_mainWindow(QObject):
 
         self.infoButton = QtWidgets.QAction(mainWindow)
         self.infoButton.setObjectName("infoButton")
+        self.infoButton.triggered.connect(self.infoMessage.exec_)
+        
         self.menuAjuda.addAction(self.infoButton)
         self.menuAjuda.addAction(self.openTutorialPage)
         self.menubar.addAction(self.menuAjuda.menuAction())
@@ -82,7 +90,7 @@ class Ui_mainWindow(QObject):
 
     @pyqtSlot()
     def OpenTutorial(self):
-         webbrowser.open('https://github.com/tr4zodone/notes_to_anki-GUI')
+         webbrowser.open('https://github.com/tr4zodone/notes_to_anki-GUI/blob/master/README.md')
     
     @pyqtSlot()
     def returnPressedSlot(self):
