@@ -82,7 +82,7 @@ Se essa sequência estivesse disposta desta forma:
 >
 >nutcracker - quebra-nozes
 >
-...
+>...
 >
 >corkscrew - saca-rolhas
 
