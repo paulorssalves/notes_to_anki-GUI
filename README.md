@@ -1,10 +1,20 @@
 # Introdução
 
-Notes_to_Anki-GUI é a versão com interface gráfica de um _script_ bem simples que criei um tempo atrás para converter minhas anotações em hebraico para .csv para que eu as pudesse usar no Anki. 
+Notes_to_Anki-GUI é a versão com interface gráfica de [um _script_ bem simples](https://github.com/tr4zodone/useful-scripts) que criei um tempo atrás para converter minhas anotações em hebraico para .csv para que eu as pudesse usar no Anki. 
 
 Apesar de eu usá-lo para me ajudar a aprender hebraico, o programa funciona para qualquer língua.
 
-A motivação por trás desse programa é simples: o modo como eu estudo línguas funciona muito bem para mim, e eu acredito que esse programa, por mais simples que seja, possa facilitar o processo de aprendizado de línguas para aqueles que querem usar o Anki para estudar.
+Por quê que eu escrevi este programa? Porque o modo como eu estudo línguas funciona muito bem para mim, e eu acredito que esse programa, por mais simples que seja, possa facilitar o processo de aprendizado de línguas para aqueles que querem usar o Anki para estudar.
+
+## Instalação
+
+**No Windows, basta baixar [este arquivo](http://www.mediafire.com/file/sd7u3t2ue2bn6f4/n_anki.exe/file) e executá-lo**. Uma tela preta abrirá e logo após aparecerá a interface do programa.
+
+Em qualquer outro sistema operacional, basta ter o Python 3 e o PyQt5 instalados, e então executar:
+
+>git clone https://github.com/tr4zodone/notes_to_anki-GUI
+>cd notes_to_anki-GUI
+>python app.py
 
 ## Como funciona
 
@@ -17,16 +27,20 @@ Podemos, então, importar cartas no Anki através de arquivos .csv. Uma forma de
 Ao abrir o programa, é isso que se vê:
 
 ![interface](img/nankigui.png)
+
 Uma tela simples, com somente três itens: um campo para selecionar arquivos, um botão em que está escrito "converter", e um ecrã branco.
 
 Nós selecionamos o arquivo:
+
 ![selecao_arquivo](img/selecting_file.png)
 
 E ele então será aberto e exibido no ecrã:
+
 ![exibicao](img/display.png)
+
 Lembrando que o programa funciona independentemente da língua-alvo. As anotações em cima estão em hebraico pois é a língua que estou estudando no momento da escrita deste arquivo.
 
-As palavras e frases dispostas no arquivo selecionado *devem* estar organizadas da seguinte forma:
+Como você pode ver, as palavras e frases dispostas no arquivo selecionado *devem* estar organizadas da seguinte forma:
 
 >man - homem
 >child - criança
@@ -66,6 +80,7 @@ Isso resultaria em duas cartas diferentes no Anki para cada sequência: uma com 
 Um exemplo disso em minhas próprias anotações foi com a expressão קצר-רוח (katser-ruakh), que significa "impaciente". No arquivo .csv esse problema é demonstrado da seguinte forma:
 
 ![problema](img/impatient.png)
+
 Como se pode perceber, _impatient_ está fora da coluna correta.
 
 Isso pode facilmente ser consertado fazendo uma breve edição no arquivo e colocando as palavras em seus devidos lugares. Todavia, achei que seria importante dizer como poderíamos evitar esse pequeno inconveniente.

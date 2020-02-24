@@ -14,7 +14,7 @@ def adapt(file, output):
     adapta as frases para serem usadas pelo Anki, otimizando-as
     para que sejam convertidas razoavelmente bem para .csv
     """
-    f = open(str(file))
+    f = open(str(file), encoding="utf8")
 
     stripped = [line.strip(";") for line in f]
     split_l = [line.split('-') for line in stripped]
@@ -27,7 +27,7 @@ def adapt(file, output):
             nl[index][phrase_index] = nl[index][phrase_index].replace(";", '')
 
     # adiciona as frases a um arquivo .csv
-    with open(output, "w+") as out:
+    with open(output, mode="w+", encoding="utf8") as out:
         writer = csv.writer(out)
         writer.writerows(nl)
 
@@ -38,13 +38,13 @@ def convert(FILE_T):
     o arquivo temporário.
     """
     FILE = re.sub(r'[.txt]*$','', FILE_T) # verifica se o arquivo é .txt. Se for, remove a extensão
-    target = open(FILE+".tmpfile","w+") # cria arquivo temporário
+    target = open(FILE+".tmpfile",mode="w+", encoding="utf8") # cria arquivo temporário
 
     # tenta encontrar arquivo  com o nome escolhido. Retorna um erro caso não encontre.
     try:
-        f = open(FILE, 'r')
+        f = open(FILE, encoding="utf8")
     except FileNotFoundError:
-        f = open(FILE+".txt", 'r')
+        f = open(FILE+".txt", encoding="utf8")
     except:
         return -1
 

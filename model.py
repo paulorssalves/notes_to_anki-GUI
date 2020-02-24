@@ -7,7 +7,7 @@ class Model:
 
     def isValid(self, fileName):
         try:
-            file = open(fileName, 'r')
+            file = open(fileName, encoding="utf8")
             file.close()
             return True
         except:
@@ -16,7 +16,7 @@ class Model:
     def setFileName(self, fileName):
         if self.isValid(fileName):
             self.fileName = fileName
-            self.fileContents = open(fileName, 'r').read()
+            self.fileContents = open(fileName, encoding="utf8").read()
         else:
             self.fileContents = ""
             self.fileName = ""
