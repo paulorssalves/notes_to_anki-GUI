@@ -13,7 +13,9 @@ Por quê que eu escrevi este programa? Porque o modo como eu estudo línguas fun
 Em qualquer outro sistema operacional, basta ter o Python 3 e o PyQt5 instalados, e então executar:
 
 >git clone https://github.com/tr4zodone/notes_to_anki-GUI
+>
 >cd notes_to_anki-GUI
+>
 >python app.py
 
 ## Como funciona
@@ -43,8 +45,11 @@ Lembrando que o programa funciona independentemente da língua-alvo. As anotaç�
 Como você pode ver, as palavras e frases dispostas no arquivo selecionado *devem* estar organizadas da seguinte forma:
 
 >man - homem
+>
 >child - criança
+>
 >nutcracker - quebra nozes
+>
 >indefinitely - indefinidamente
 
 Basta, então, clicar em "Converter" que, no mesmo diretório em que está o arquivo que foi selecionado aparecerá um arquivo .csv.
@@ -60,9 +65,13 @@ E, como se pode ver, está tudo como desejado.
 Como disse acima, as palavras no arquivo devem estar dipostas dessa forma:
 
 >man - homem
+>
 >child - criança
+>
 >nutcracker - quebra nozes
+>
 >indefinitely - indefinidamente
+>
 >corkscrew - saca rolhas
 
 Perceba que "quebra-nozes" e "saca-rolhas" estão sem o hífen ("quebra nozes", "saca rolhas"). O motivo disso é que o programa separa as palavras e frases por um traço ("-"). Palavras separadas por traço serão separadas entre si.
@@ -70,8 +79,11 @@ Perceba que "quebra-nozes" e "saca-rolhas" estão sem o hífen ("quebra nozes", 
 Se essa sequência estivesse disposta desta forma:
 
 >...
+>
 >nutcracker - quebra-nozes
+>
 ...
+>
 >corkscrew - saca-rolhas
 
 
